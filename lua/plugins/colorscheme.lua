@@ -30,7 +30,7 @@ return {
         gitsigns = true,
         nvimtree = true,
         notify = false,
-        mini = { enabled = true, indentscope_color = "" },
+        mini = { enabled = false, indentscope_color = "" },
       },
     },
     config = function(_, opts)
