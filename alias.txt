@@ -1,0 +1,7 @@
+
+# git alias
+alias gac='git add . && git commit -m'
+alias gho='git push origin'
+alias glo='git pull origin'
+alias gco='git checkout'
+alias gcb='git checkout -b'
