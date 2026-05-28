@@ -9,7 +9,6 @@ return {
       })
     end,
   },
-
   -- 🐈 Catppuccin
   {
     "catppuccin/nvim",
@@ -17,12 +16,12 @@ return {
     lazy = false, -- priority load
     priority = 1000, -- load first
     opts = {
-      flavour = "auto", -- latte, frappe, macchiato, mocha
+      flavour = "macchiato", -- latte, frappe, macchiato, mocha
       background = {
         light = "latte",
-        dark = "mocha",
+        dark = "macchiato",
       },
-      transparent_background = true,
+      transparent_background = false,
       show_end_of_buffer = false,
       term_colors = false,
       integrations = {
@@ -35,9 +34,29 @@ return {
     },
     config = function(_, opts)
       require("catppuccin").setup(opts)
-
-      -- baru set colorscheme di sini
+      -- Load the colorscheme/comment if don't use
       vim.cmd.colorscheme("catppuccin")
+    end,
+  },
+  {
+    "ayu-theme/ayu-vim",
+    lazy = false, -- Load immediately
+    priority = 1000, -- High priority to load before other plugins
+    config = function()
+      -- Set the variant: 'light', 'mirage', or 'dark'
+      vim.g.ayucolor = "mirage"
+
+      -- Load the colorscheme/comment if don't use
+      -- vim.cmd.colorscheme("ayu")
+    end,
+  },
+  {
+    "fugalh/desert.vim",
+    lazy = false, -- Load immediately at startup
+    priority = 1000, -- Load before other UI plugins
+    config = function()
+      -- Load the colorscheme
+      -- vim.cmd.colorscheme("desert")
     end,
   },
 }
